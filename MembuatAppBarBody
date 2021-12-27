@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'MFRH application',
+    home: HalamanSatu()
+  ));
+}
+
+class HalamanSatu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.lightBlueAccent,
+      appBar: new AppBar(
+        backgroundColor: Colors.deepPurple,
+        leading: new Icon(Icons.home),
+        title: new Center(
+          child:  new Text("Aplikasi Tutor"),
+        ),
+        actions: <Widget>[
+          new Icon(Icons.search)
+        ],
+      ),
+      body: new Container(
+        child: new Center(
+          child: new Column(
+            children: <Widget>[ 
+              new Icon(Icons.wifi,
+                color:Colors.white,size: 90.0,),
+              new Text("Muhammad Febrian")
+            ],
+          ) ,
+        ),
+      ),
+    );
+  }
+}
