@@ -1,0 +1,57 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(title: 'MFRH application', home: MyApp()));
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        leading: const Icon(Icons.home),
+        title: const Center(
+          child: Text("Aplikasi Tutor"),
+        ),
+        actions: const <Widget>[Icon(Icons.search)],
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: const <Widget>[
+          CardSaya(icon: Icons.wifi, text: "Wifi",),
+          CardSaya(icon: Icons.home, text: "Home",),
+          CardSaya(icon: Icons.local_pizza, text: "Pizza",),
+          CardSaya(icon: Icons.flag, text: "Bendera",)
+        ],
+      ),
+    );
+  }
+}
+
+class CardSaya extends StatelessWidget {
+
+  const CardSaya({required this.icon, required this.text});
+  final IconData icon;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(3.0),
+      child: Card(
+          child: Column(
+        children: <Widget>[
+          Icon(
+            icon,
+            size: 50.0,
+            color: Colors.orange,
+          ),
+          Text(text),
+        ],
+      )),
+    );
+  }
+}
